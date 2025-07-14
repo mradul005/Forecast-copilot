@@ -1,15 +1,12 @@
 import streamlit as st
 import pandas as pd
 import openai
-openai.api_key = st.secrets ["GROQ_API_KEY"]
-openai.api_base = "https://api.groq.com/openai/v1"
-import os
 
-# Set your OpenAI API key
-openai.api_key = st.secrets.get("OPENAI_API_KEY") or os.getenv("OPENAI_API_KEY")
+# ✅ Correct Groq API setup
+openai.api_key = st.secrets["GROQ_API_KEY"]
+openai.api_base = "https://api.groq.com/openai/v1"
 
 st.title("📊 Forecast Copilot")
-
 st.write("Upload a forecast CSV and select a product to understand forecast variance.")
 
 # Upload CSV
@@ -53,4 +50,4 @@ Return your answer as clear bullet points.
                 st.markdown("### 🧠 Forecast Explanation:")
                 st.markdown(explanation)
             except Exception as e:
-                st.error(f"Error: {str(e)}")
+                st.error(f"❌ Error: {str(e)}")
