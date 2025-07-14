@@ -45,7 +45,7 @@ Return your answer as clear bullet points.
         with st.spinner("🧠 Thinking..."):
             try:
                 response = openai.ChatCompletion.create(
-                    model=""llama3-70b-8192",
+                    model="llama3-70b-8192",
                     messages=[{"role": "user", "content": prompt}],
                     temperature=0.3
                 )
