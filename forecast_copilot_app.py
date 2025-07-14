@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import openai
-openai.api_key = st.secrets.get("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")
+openai.api_key = st.secrets["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"]
 openai.api_base = "https://api.groq.com/openai/v1"
 import os
 
