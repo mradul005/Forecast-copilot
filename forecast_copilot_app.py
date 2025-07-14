@@ -1,6 +1,8 @@
 import streamlit as st
 import pandas as pd
 import openai
+openai.api_key = st.secrets.get("GROQ_API_KEY")
+openai.api_base = "https://api.groq.com/openai/v1"
 import os
 
 # Set your OpenAI API key
@@ -43,7 +45,7 @@ Return your answer as clear bullet points.
         with st.spinner("🧠 Thinking..."):
             try:
                 response = openai.ChatCompletion.create(
-                    model="gpt-3.5-turbo",
+                    model=""llama3-70b-8192",
                     messages=[{"role": "user", "content": prompt}],
                     temperature=0.3
                 )
